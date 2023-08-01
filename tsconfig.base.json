@@ -24,7 +24,9 @@
       "@gnx/shared-prime-ng": [
         "libs/shared-prime-ng/src/index.ts"
       ]
-    }
+    },
+    "allowJs": true,
+    "noImplicitAny": false
   },
   "exclude": [
     "node_modules",

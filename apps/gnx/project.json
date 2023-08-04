@@ -2,7 +2,7 @@
   "name": "gnx",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "gnx-prototipo",
+  "prefix": "gnx",
   "sourceRoot": "apps/gnx/src",
   "tags": [],
   "targets": {

@@ -1,3 +1,6 @@
 export const environment = {
-  api: 'https://aqm.test/cerotecnopor/api/public'
+  code: 'APP_LOGIN',
+  apis: {
+    authentication: 'https://aqm.test/cerotecnopor/api/public'
+  }
 };

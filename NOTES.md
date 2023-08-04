@@ -35,3 +35,5 @@ npx nx run-many --target=build --configuration=dev --all --parallel=7
 nx g @nx/angular:lib data-access-pokemon
 
 nx g @nx/angular:service pokeapi --project data-access-pokemon
+
+nx serve shell --devRemotes=login,admin,users

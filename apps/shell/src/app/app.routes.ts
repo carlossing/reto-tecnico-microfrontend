@@ -1,4 +1,5 @@
 import {Route} from '@angular/router';
+import {AuthenticationGuard} from "@gnx/authentication";
 
 export const appRoutes: Route[] = [
   {
@@ -12,6 +13,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'admin',
+    canActivate: [AuthenticationGuard],
     loadChildren: () => import('admin/Module').then((m) => m.RemoteEntryModule),
   },
   {

@@ -14,10 +14,21 @@ export const appRoutes: Route[] = [
   {
     path: 'admin',
     canActivate: [AuthenticationGuard],
-    loadChildren: () => import('admin/Module').then((m) => m.RemoteEntryModule),
+
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('admin/Module').then((m) => m.RemoteEntryModule),
+      },
+      {
+        path: 'users',
+        loadChildren: () => import('users/Module').then((m) => m.RemoteEntryModule),
+      },
+
+    ]
   },
-  {
-    path: 'users',
-    loadChildren: () => import('users/Module').then((m) => m.RemoteEntryModule),
-  },
+  // {
+  //   path: 'users',
+  //   loadChildren: () => import('users/Module').then((m) => m.RemoteEntryModule),
+  // },
 ];

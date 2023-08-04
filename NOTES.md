@@ -56,6 +56,10 @@ nx g @nx/angular:service LocalStorage --project shared --path=libs/shared/src/li
 nx g @nx/angular:module admin --project admin --routing
 nx g @nx/angular:component admin --path=apps/admin/src/app/admin/components --project admin --module=admin --dry-run
 
+## Users
+nx g @nx/angular:module users --project users --routing
+nx g @nx/angular:component users-home --path=apps/users/src/app/users/components --project users --module=users --dry-run
+
 ## Shell
 
 nx g @nx/angular:environments --project shell

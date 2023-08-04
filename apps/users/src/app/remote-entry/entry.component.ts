@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'gnx-users-entry',
-  template: `<gnx-nx-welcome></gnx-nx-welcome>`,
+  template: `<h1>Hola</h1>`,
 })
 export class RemoteEntryComponent {}

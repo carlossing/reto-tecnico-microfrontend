@@ -65,7 +65,7 @@ export class LoginComponent {
         console.log(authenticationResponse);
         if (this.authenticationService.validateResponse(authenticationResponse)) {
           console.log('Login OK!!!');
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/admin/users']);
         }
       });
 

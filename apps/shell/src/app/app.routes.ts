@@ -11,11 +11,16 @@ export const appRoutes: Route[] = [
     loadChildren: () => import('admin/Module').then((m) => m.RemoteEntryModule),
   },
   {
-    path: 'login',
+    path: 'auth',
     loadChildren: () => import('login/Module').then((m) => m.RemoteEntryModule),
   },
+  // {
+  //   path: 'welcome',
+  //   component: NxWelcomeComponent,
+  // },
   {
     path: '',
-    component: NxWelcomeComponent,
+    pathMatch: 'full',
+    redirectTo: '/auth/login',
   },
 ];

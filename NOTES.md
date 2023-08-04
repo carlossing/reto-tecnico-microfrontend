@@ -36,4 +36,9 @@ nx g @nx/angular:lib data-access-pokemon
 
 nx g @nx/angular:service pokeapi --project data-access-pokemon
 
+nx g @nx/angular:module login --project login --routing
+
+nx g @nx/angular:component login --path=apps/login/src/app/login/components --project login --module=login --dry-run
+
 nx serve shell --devRemotes=login,admin,users
+

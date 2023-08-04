@@ -6,6 +6,7 @@ import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
 import {APP_CONFIG, AuthenticationModule, AuthenticationService} from "@gnx/authentication";
+import {environment} from "../../environments/environment";
 
 @NgModule({
   declarations: [LoginComponent],
@@ -20,9 +21,7 @@ import {APP_CONFIG, AuthenticationModule, AuthenticationService} from "@gnx/auth
     AuthenticationService,
     {
       provide: APP_CONFIG,
-      useValue: {
-        apiu:''
-      }
+      useValue: environment
     }
   ],
 })

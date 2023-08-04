@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
 
 @Component({
@@ -6,25 +6,21 @@ import {MenuItem} from "primeng/api";
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
 
-  items: MenuItem[] | undefined;
+  @Input() items: MenuItem[]  = [];
+
+  logoutMenu: MenuItem = {
+    label: 'Salir',
+    icon: 'pi pi-fw pi-trash',
+    command: () => {
+      // this.delete();
+      console.log('salir');
+    }
+  };
 
   ngOnInit() {
-    this.items = [
-      {
-        label: 'Usuario',
-        icon: 'pi pi-fw pi-plus',
-        routerLink: ['/admin/users']
-      },
-      {
-        label: 'Salir',
-        icon: 'pi pi-fw pi-trash',
-        command: () => {
-          // this.delete();
-          console.log('salir');
-        }
-      }
-    ];
+
+    this.items.push(this.logoutMenu);
   }
 }

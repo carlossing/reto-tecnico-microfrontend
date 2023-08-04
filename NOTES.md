@@ -32,7 +32,8 @@ https://github.com/nrwl/nx/issues/10017#issuecomment-1542329032
 npx nx run-many --target=build --configuration=dev --all --parallel=7
 `````
 `````shell
-nx g @nx/angular:lib data-access-pokemon
+## Libs
+nx g @nx/angular:lib client-users
 
 ## Login
 

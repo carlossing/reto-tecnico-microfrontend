@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {MenuItem} from 'primeng/api';
+
+// import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'gnx-admin',
@@ -8,23 +9,24 @@ import {MenuItem} from 'primeng/api';
 })
 export class AdminComponent implements OnInit {
 
-  items: MenuItem[] | undefined;
-
+  // items: MenuItem[] | undefined;
+  //
   ngOnInit() {
-    this.items = [
-      {
-        label: 'Usuario',
-        icon: 'pi pi-fw pi-plus',
-        routerLink: ['/admin/users']
-      },
-      {
-        label: 'Salir',
-        icon: 'pi pi-fw pi-trash',
-        command: () => {
-          // this.delete();
-          console.log('salir');
-        }
-      }
-    ];
+    console.log('ngOnInit')
+    //   this.items = [
+    //     {
+    //       label: 'Usuario',
+    //       icon: 'pi pi-fw pi-plus',
+    //       routerLink: ['/admin/users']
+    //     },
+    //     {
+    //       label: 'Salir',
+    //       icon: 'pi pi-fw pi-trash',
+    //       command: () => {
+    //         // this.delete();
+    //         console.log('salir');
+    //       }
+    //     }
+    //   ];
   }
 }

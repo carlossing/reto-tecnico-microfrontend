@@ -51,6 +51,7 @@ nx g @nx/angular:guard authentication --implements CanActivate --project authent
 
 ## Shared
 nx g @nx/angular:service LocalStorage --project shared --path=libs/shared/src/lib/services
+nx g @nx/angular:component menu --path=libs/shared/src/lib/components --project shared --dry-run
 
 ## Admin
 nx g @nx/angular:module admin --project admin --routing

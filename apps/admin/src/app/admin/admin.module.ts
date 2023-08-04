@@ -10,7 +10,7 @@ import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedPrimeNgModule
+    // SharedPrimeNgModule
   ],
 })
 export class AdminModule {

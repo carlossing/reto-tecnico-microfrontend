@@ -46,6 +46,7 @@ nx g @nx/angular:interface Authentication --project authentication --path=libs/a
 
 ## Authentication
 nx g @nx/angular:service authentication --project authentication --path=libs/authentication/src/lib/services
+nx g @nx/angular:service jwt --project authentication --path=libs/authentication/src/lib/services
 
 ## Shared
 nx g @nx/angular:service LocalStorage --project shared --path=libs/shared/src/lib/services

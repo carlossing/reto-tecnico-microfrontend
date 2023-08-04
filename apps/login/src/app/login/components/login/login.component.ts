@@ -63,9 +63,10 @@ export class LoginComponent {
       ).subscribe((authenticationResponse: AuthenticationResponse) => {
         this.isLoading = false;
         console.log(authenticationResponse);
-        // if (this.authenticationService.validateResponse(data)) {
-        //   this.router.navigate(['/dashboard/compromisos']);
-        // }
+        if (this.authenticationService.validateResponse(authenticationResponse)) {
+          console.log('Login OK!!!');
+          this.router.navigate(['/admin']);
+        }
       });
 
     } else {

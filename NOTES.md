@@ -34,10 +34,14 @@ npx nx run-many --target=build --configuration=dev --all --parallel=7
 
 nx g @nx/angular:lib data-access-pokemon
 
-nx g @nx/angular:service authentication --project authentication
+nx g @nx/angular:service authentication --project authentication --path=libs/authentication/src/lib/services
 
+nx g @nx/angular:environments login --project login
 nx g @nx/angular:module login --project login --routing
 nx g @nx/angular:component login --path=apps/login/src/app/login/components --project login --module=login --dry-run
+
+nx g @nx/angular:service login --project login --path=apps/login/src/app/login/services
+
 
 nx g @nx/angular:module admin --project admin --routing
 nx g @nx/angular:component admin --path=apps/admin/src/app/admin/components --project admin --module=admin --dry-run

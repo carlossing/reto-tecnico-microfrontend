@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {AuthenticationService} from "@gnx/authentication";
 
 @Component({
   selector: 'gnx-login',
@@ -16,6 +17,7 @@ export class LoginComponent {
     private fb: UntypedFormBuilder,
     private router: Router,
     // private authenticationService: AuthenticationService,
+    private authenticationService: AuthenticationService,
   ) {
     this.initForm();
   }

@@ -20,14 +20,14 @@ export class AuthenticationService {
 
   create(username: string, password: string): Observable<AuthenticationResponse> {
 
-    const endpoint = `${this.AUTHENTICATION_ENDPOINT.url}/auth`;
+    const endpoint = `${this.AUTHENTICATION_ENDPOINT}/auth`;
 
     const payload: PasswordPayload = {
       grant_type: GrantTypesEnum.PASSWORD,
       username: username,
       password: password,
-      client_id: this.AUTHENTICATION_ENDPOINT.payload.client_id,
-      client_secret: this.AUTHENTICATION_ENDPOINT.payload.client_secret,
+      client_id: this.appConfig.client_id,
+      client_secret: this.appConfig.client_secret,
     }
     // this.username = username;
     const headers = {}

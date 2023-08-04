@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "@gnx/authentication";
+import {Subject, takeUntil} from "rxjs";
+import {AuthenticationResponse} from "../../../../../../../libs/authentication/src/lib/models/authentication.model";
 
 @Component({
   selector: 'gnx-login',
@@ -13,6 +15,7 @@ export class LoginComponent {
   isLoading = false;
   validateForm!: UntypedFormGroup;
 
+  private unsubscribe = new Subject<void>();
   constructor(
     private fb: UntypedFormBuilder,
     private router: Router,
@@ -52,17 +55,18 @@ export class LoginComponent {
     if (this.validateForm.valid) {
       console.log('this.validateForm.valid');
       this.isLoading = true;
-      // this.authenticationService.login(
-      //   this.validateForm.value.userName,
-      //   this.validateForm.value.password,
-      // ).pipe(
-      //   takeUntil(this.unsubscribe)
-      // ).subscribe((data: AuthenticationResponse) => {
-      //   this.isLoading = false;
-      //   if (this.authenticationService.validateResponse(data)) {
-      //     this.router.navigate(['/dashboard/compromisos']);
-      //   }
-      // });
+      this.authenticationService.create(
+        this.validateForm.value.userName,
+        this.validateForm.value.password,
+      ).pipe(
+        takeUntil(this.unsubscribe)
+      ).subscribe((authenticationResponse: AuthenticationResponse) => {
+        this.isLoading = false;
+        console.log(authenticationResponse);
+        // if (this.authenticationService.validateResponse(data)) {
+        //   this.router.navigate(['/dashboard/compromisos']);
+        // }
+      });
 
     } else {
 

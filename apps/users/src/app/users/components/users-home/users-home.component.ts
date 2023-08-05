@@ -1,15 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
 import {UsersResponse, UsersService} from "@gnx/client-users";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'gnx-users-home',
   templateUrl: './users-home.component.html',
   styleUrls: ['./users-home.component.scss'],
 })
-export class UsersHomeComponent implements OnInit {
+export class UsersHomeComponent implements OnInit, OnDestroy {
 
   menuItems: MenuItem[] = [];
+
+  private unsubscribe = new Subject<void>();
 
   constructor(
     private userService: UsersService
@@ -25,10 +28,23 @@ export class UsersHomeComponent implements OnInit {
         routerLink: ['/admin/users']
       },
     ];
-    this.userService.getAll().subscribe((response: UsersResponse) => {
+    this.getAllUsers();
+  }
+
+  getAllUsers() {
+
+    this.userService.getAll()
+      .pipe(
+        takeUntil(this.unsubscribe)
+      ).subscribe((response: UsersResponse) => {
 
       console.log(response);
-    })
+    });
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 
 

@@ -1,21 +1,41 @@
 <gnx-prototipo-menu [items]="menuItems"></gnx-prototipo-menu>
+<div class="grid">
+  <div class="col-12">
 
+    <p-table [value]="users"
+             [tableStyle]="{ 'min-width': '50rem' }"
+             styleClass="p-datatable-gridlines "
+             responsiveLayout="scroll" [rows]="10"
+             [paginator]="true"
+             [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true"
+    >
+      <ng-template pTemplate="caption">
+        <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
+          <h5 class="m-0">Administrar Usuarios</h5>
+<!--          <span class="block mt-2 md:mt-0 p-input-icon-left">-->
+<!--            <i class="pi pi-search"></i>-->
+<!--            <input pInputText type="text" (input)="onGlobalFilter(dt, $event)" placeholder="Buscar..."-->
+<!--                   class="w-full sm:w-auto"/>-->
+<!--          </span>-->
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Uuid</th>
+          <th>Username</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
 
-<p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Uuid</th>
-      <th>Username</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-user>
-    <tr>
-      <td>{{ user.id }}</td>
-      <td>{{ user.username }}</td>
-      <td>{{ user.first_name }}</td>
-      <td>{{ user.last_name }}</td>
-    </tr>
-  </ng-template>
-</p-table>
+  </div>
+</div>

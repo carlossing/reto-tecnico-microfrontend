@@ -3,13 +3,12 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 import {RemoteEntryComponent} from './entry.component';
-import {NxWelcomeComponent} from './nx-welcome.component';
 import {remoteRoutes} from './entry.routes';
 import {APP_CONFIG} from "@gnx/app-config";
 import {environment} from "../../environments/environment";
 
 @NgModule({
-  declarations: [RemoteEntryComponent, NxWelcomeComponent],
+  declarations: [RemoteEntryComponent, ],
   imports: [
     CommonModule,
     RouterModule.forChild(remoteRoutes)

@@ -8,10 +8,15 @@ import { ClientUsersModule, UsersService } from '@gnx/client-users';
 import { httpInterceptorProviders } from '../../../../../libs/shared/src/lib/interceptors';
 import { SharedPrimeNgModule } from '@gnx/shared-prime-ng';
 import { UsersDetailComponent } from './components/users-detail/users-detail.component';
+import { UsersContainerComponent } from './components/users-container/users-container.component';
 
 // console.log(environment);
 @NgModule({
-  declarations: [UsersHomeComponent, UsersDetailComponent],
+  declarations: [
+    UsersHomeComponent,
+    UsersDetailComponent,
+    UsersContainerComponent,
+  ],
   imports: [
     CommonModule,
     UsersRoutingModule,

@@ -11,7 +11,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class UsersHomeComponent implements OnInit, OnDestroy {
 
-  menuItems: MenuItem[] = [];
 
   users: User[] = [];
   private unsubscribe = new Subject<void>();
@@ -24,14 +23,6 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
-    this.menuItems = [
-      {
-        label: 'Usuario',
-        icon: 'pi pi-fw pi-plus',
-        routerLink: ['/admin/users']
-      },
-    ];
     this.getAllUsers();
   }
 

@@ -6,7 +6,6 @@ import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
 import {SharedModule} from "@gnx/shared";
-import {AppConfigModule} from "@gnx/app-config";
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import {AppConfigModule} from "@gnx/app-config";
     ReactiveFormsModule,
     SharedPrimeNgModule,
     SharedModule,
-    AppConfigModule,
   ],
   providers: [],
 })

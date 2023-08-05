@@ -18,7 +18,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'admin',
-    canActivate: [AuthenticationGuard],
+    // canActivate: [AuthenticationGuard],
 
     children: [
       {

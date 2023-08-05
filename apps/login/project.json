@@ -29,7 +29,11 @@
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/login/webpack.config.js"
-        }
+        },
+
+        "allowedCommonJsDependencies": [
+          "crypto-js"
+        ]
       },
       "configurations": {
         "production": {

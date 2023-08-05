@@ -9,16 +9,14 @@ import {APP_CONFIG} from "@gnx/app-config";
 })
 export class UsersService {
 
-  private readonly USERS_ENDPOINT = this.appConfig.apis.users;
+  private readonly USERS_ENDPOINT = this.appConfig.apis.users + '/v1/admin/users';
 
   constructor(
     @Inject(APP_CONFIG) private appConfig: any,
     private http: HttpClient,
   ) {
+    console.log(appConfig);
   }
-
-
-  // UsersResponse
 
   getAll(
     // pageIndex: number,

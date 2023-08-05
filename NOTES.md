@@ -64,9 +64,11 @@ nx g @nx/angular:component menu --path=libs/shared/src/lib/components --project 
 nx g @nx/angular:module admin --project admin --routing
 nx g @nx/angular:component admin --path=apps/admin/src/app/admin/components --project admin --module=admin --dry-run
 nx g @nx/angular:environments --project admin
+
 ## Users
 nx g @nx/angular:module users --project users --routing
 nx g @nx/angular:component users-home --path=apps/users/src/app/users/components --project users --module=users --dry-run
+nx g @nx/angular:component users-detail --path=apps/users/src/app/users/components --project users --module=users --dry-run
 nx g @nx/angular:environments --project users
 ## Shell
 

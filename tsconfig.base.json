@@ -35,7 +35,8 @@
       ]
     },
     "allowJs": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false
   },
   "exclude": [
     "node_modules",

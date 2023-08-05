@@ -1,7 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
-import {Users, UsersResponse, UsersService} from "@gnx/client-users";
+import {User, UsersCollectionResponse, UsersService} from "@gnx/client-users";
 import {Subject, takeUntil} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'gnx-users-home',
@@ -12,11 +13,13 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
 
   menuItems: MenuItem[] = [];
 
-  users: Users[] = [];
+  users: User[] = [];
   private unsubscribe = new Subject<void>();
 
   constructor(
-    private userService: UsersService
+    private userService: UsersService,
+    private route: ActivatedRoute,
+    private router: Router,
   ) {
   }
 
@@ -37,9 +40,16 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
     this.userService.getAll()
       .pipe(
         takeUntil(this.unsubscribe)
-      ).subscribe((response: UsersResponse) => {
+      ).subscribe((response: UsersCollectionResponse) => {
       this.users = response.items;
     });
+  }
+
+  openEditModal(user: User) {
+    this.redirectToTestForm(user);
+  }
+  redirectToTestForm(user: User) {
+    this.router.navigate(['/admin/users/detail/' + user.id]);
   }
 
   ngOnDestroy() {

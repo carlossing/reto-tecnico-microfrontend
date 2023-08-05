@@ -1,16 +1,17 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import {UsersRoutingModule} from './users-routing.module';
-import {UsersHomeComponent} from "./components/users-home/users-home.component";
-import {SharedModule} from "@gnx/shared";
-import {ClientUsersModule, UsersService} from "@gnx/client-users";
-import {httpInterceptorProviders} from "../../../../../libs/shared/src/lib/interceptors";
-import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
+import { UsersRoutingModule } from './users-routing.module';
+import { UsersHomeComponent } from './components/users-home/users-home.component';
+import { SharedModule } from '@gnx/shared';
+import { ClientUsersModule, UsersService } from '@gnx/client-users';
+import { httpInterceptorProviders } from '../../../../../libs/shared/src/lib/interceptors';
+import { SharedPrimeNgModule } from '@gnx/shared-prime-ng';
+import { UsersDetailComponent } from './components/users-detail/users-detail.component';
 
 // console.log(environment);
 @NgModule({
-  declarations: [UsersHomeComponent],
+  declarations: [UsersHomeComponent, UsersDetailComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,
@@ -25,7 +26,6 @@ import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
     // },
     httpInterceptorProviders,
     UsersService,
-  ]
+  ],
 })
-export class UsersModule {
-}
+export class UsersModule {}

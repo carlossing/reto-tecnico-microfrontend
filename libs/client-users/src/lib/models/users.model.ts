@@ -1,12 +1,12 @@
-export interface Users {
+export interface User {
   id?: string;
   username?: string;
   first_name?: string;
   last_name?: string;
 }
 
-export interface UsersResponse {
+export interface UsersCollectionResponse {
   items_page?: number;
-  items: Users[];
+  items: User[];
   ok?: boolean;
 }

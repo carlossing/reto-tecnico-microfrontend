@@ -6,8 +6,8 @@ import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
 import {SharedModule} from "@gnx/shared";
+import {AppConfigModule} from "@gnx/app-config";
 
-console.log('aaaaaaaaaaaa');
 
 @NgModule({
   declarations: [LoginComponent],
@@ -17,10 +17,10 @@ console.log('aaaaaaaaaaaa');
     ReactiveFormsModule,
     SharedPrimeNgModule,
     SharedModule,
+    AppConfigModule,
   ],
   providers: [],
 })
 export class LoginModule {
 }
 
-console.log('bbbbbbbbbbb');

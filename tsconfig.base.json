@@ -18,6 +18,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gnx/app-config": [
+        "libs/app-config/src/index.ts"
+      ],
       "@gnx/authentication": [
         "libs/authentication/src/index.ts"
       ],
@@ -29,9 +32,6 @@
       ],
       "@gnx/shared-prime-ng": [
         "libs/shared-prime-ng/src/index.ts"
-      ],
-      "@gnx/app-config": [
-        "libs/app-config/index.ts"
       ]
     },
     "allowJs": true,

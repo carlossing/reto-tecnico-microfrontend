@@ -13,9 +13,7 @@ import {JwtService} from "./jwt.service";
 import {LocalStorageService} from "../../index";
 import {APP_CONFIG} from "@gnx/app-config";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationService {
 
   private readonly AUTHENTICATION_ENDPOINT = this.appConfig.apis.authentication;

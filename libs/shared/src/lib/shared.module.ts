@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {MenuComponent} from './components/menu/menu.component';
 import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
 import {HttpClientModule} from "@angular/common/http";
+import {AuthenticationService} from "./services/authentication.service";
 
 @NgModule({
   imports: [
@@ -14,6 +15,9 @@ import {HttpClientModule} from "@angular/common/http";
   exports: [
     MenuComponent
   ],
+  providers: [
+    AuthenticationService,
+  ]
 
 })
 export class SharedModule {

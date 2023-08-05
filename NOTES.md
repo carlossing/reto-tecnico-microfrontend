@@ -37,6 +37,8 @@ nx g @nx/angular:lib client-users
 nx g @nx/angular:service users --project client-users --path=libs/client-users/src/lib/services
 nx g @nx/angular:interface Users --project client-users --path=libs/client-users/src/lib/models --type=model
 
+nx g @nx/angular:lib app-config
+
 ## Login
 
 

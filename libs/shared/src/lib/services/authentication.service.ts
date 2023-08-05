@@ -1,5 +1,4 @@
 import {Inject, Injectable} from '@angular/core';
-import {APP_CONFIG} from "../../index";
 import {Observable} from "rxjs";
 import {
   AuthenticationConstant,
@@ -8,10 +7,11 @@ import {
   PasswordPayload
 } from "../models/authentication.model";
 import {HttpClient} from "@angular/common/http";
-import {LocalStorageService} from "@gnx/shared";
 import {Router} from "@angular/router";
 import * as crypto from "crypto-js";
 import {JwtService} from "./jwt.service";
+import {LocalStorageService} from "../../index";
+import {APP_CONFIG} from "@gnx/app-config";
 
 @Injectable({
   providedIn: 'root'
@@ -79,5 +79,10 @@ export class AuthenticationService {
       this.localStorage.set(AuthenticationConstant.AUTH_TOKEN_HASH, crypto.SHA256(authenticationResponse.access_token).toString());
       this.localStorage.set(AuthenticationConstant.AUTH_REFRESH_TOKEN, authenticationResponse.refresh_token || '');
     }
+  }
+
+
+  getToken() {
+    return this.localStorage.get(AuthenticationConstant.AUTH_TOKEN);
   }
 }

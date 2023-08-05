@@ -15,7 +15,9 @@ import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
     CKEditorModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

@@ -39,6 +39,7 @@ nx g @nx/angular:interface Users --project client-users --path=libs/client-users
 
 ## Login
 
+
 nx g @nx/angular:environments --project login
 nx g @nx/angular:module login --project login --routing
 nx g @nx/angular:component login --path=apps/login/src/app/login/components --project login --module=login --dry-run
@@ -54,16 +55,17 @@ nx g @nx/angular:guard authentication --implements CanActivate --project authent
 
 ## Shared
 nx g @nx/angular:service LocalStorage --project shared --path=libs/shared/src/lib/services
+nx g @nx/angular:service Token --project shared --path=libs/shared/src/lib/interceptors
 nx g @nx/angular:component menu --path=libs/shared/src/lib/components --project shared --dry-run
 
 ## Admin
 nx g @nx/angular:module admin --project admin --routing
 nx g @nx/angular:component admin --path=apps/admin/src/app/admin/components --project admin --module=admin --dry-run
-
+nx g @nx/angular:environments --project admin
 ## Users
 nx g @nx/angular:module users --project users --routing
 nx g @nx/angular:component users-home --path=apps/users/src/app/users/components --project users --module=users --dry-run
-
+nx g @nx/angular:environments --project users
 ## Shell
 
 nx g @nx/angular:environments --project shell

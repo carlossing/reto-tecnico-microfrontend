@@ -1,25 +1,32 @@
 import {Component} from '@angular/core';
-import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
+import {FormControl, UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {AuthenticationService} from "@gnx/authentication";
 import {Subject, takeUntil} from "rxjs";
-import {AuthenticationResponse} from "../../../../../../../libs/authentication/src/lib/models/authentication.model";
+
+import {AuthenticationResponse, AuthenticationService} from "@gnx/shared";
+import {APP_CONFIG} from "@gnx/app-config";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'gnx-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  // providers:[
+  //   {
+  //     provide: APP_CONFIG,
+  //     useValue: environment
+  //   },
+  // ]
 })
 export class LoginComponent {
 
   isLoading = false;
-  validateForm!: UntypedFormGroup;
+  loginForm!: UntypedFormGroup;
 
   private unsubscribe = new Subject<void>();
   constructor(
     private fb: UntypedFormBuilder,
     private router: Router,
-    // private authenticationService: AuthenticationService,
     private authenticationService: AuthenticationService,
   ) {
     this.initForm();
@@ -27,7 +34,7 @@ export class LoginComponent {
 
   initForm() {
 
-    this.validateForm = this.fb.group({
+    this.loginForm = this.fb.group({
       userName: [
         '',
         [
@@ -36,11 +43,13 @@ export class LoginComponent {
           Validators.maxLength(320)
         ]
       ],
-      password: ['', [
-        Validators.required,
-        Validators.minLength(1),
-        Validators.maxLength(200)
-      ]],
+      password: new FormControl(),
+      // password: ['', [
+      //   Validators.required,
+      //   Validators.minLength(1),
+      //   Validators.maxLength(200)
+      // ]],
+
       // captcha: ['', [
       //   Validators.required,
       //   Validators.minLength(6),
@@ -52,26 +61,29 @@ export class LoginComponent {
 
   submitForm(): void {
     console.log('submitForm');
-    if (this.validateForm.valid) {
+    console.log(this.loginForm.value);
+    if (this.loginForm.valid) {
       console.log('this.validateForm.valid');
+
+      console.log(this.loginForm.value);
       this.isLoading = true;
-      this.authenticationService.create(
-        this.validateForm.value.userName,
-        this.validateForm.value.password,
-      ).pipe(
-        takeUntil(this.unsubscribe)
-      ).subscribe((authenticationResponse: AuthenticationResponse) => {
-        this.isLoading = false;
-        console.log(authenticationResponse);
-        if (this.authenticationService.validateResponse(authenticationResponse)) {
-          console.log('Login OK!!!');
-          this.router.navigate(['/admin/users']);
-        }
-      });
+      // this.authenticationService.create(
+      //   this.loginForm.value.userName,
+      //   this.loginForm.value.password,
+      // ).pipe(
+      //   takeUntil(this.unsubscribe)
+      // ).subscribe((authenticationResponse: AuthenticationResponse) => {
+      //   this.isLoading = false;
+      //   console.log(authenticationResponse);
+      //   // if (this.authenticationService.validateResponse(authenticationResponse)) {
+      //     console.log('Login OK!!!');
+      //   //   this.router.navigate(['/admin/users']);
+      //   // }
+      // });
 
     } else {
 
-      Object.values(this.validateForm.controls).forEach(control => {
+      Object.values(this.loginForm.controls).forEach(control => {
         if (control.invalid) {
           control.markAsDirty();
           control.updateValueAndValidity({onlySelf: true});

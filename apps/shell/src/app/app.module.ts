@@ -4,25 +4,20 @@ import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {appRoutes} from './app.routes';
 import {NxWelcomeComponent} from './nx-welcome.component';
-import {APP_CONFIG, AuthenticationModule, AuthenticationService} from "@gnx/authentication";
-import {environment} from "../environments/environment";
 import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
+import {SharedModule} from "@gnx/shared";
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
-    AuthenticationModule,
+    RouterModule.forRoot(appRoutes, {
+      initialNavigation: 'enabledBlocking'
+    }),
+    SharedModule,
     SharedPrimeNgModule,
   ],
-  providers: [
-    AuthenticationService,
-    {
-      provide: APP_CONFIG,
-      useValue: environment
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {

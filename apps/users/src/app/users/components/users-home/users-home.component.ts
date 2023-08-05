@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {UsersResponse, UsersService} from "@gnx/client-users";
 
 @Component({
   selector: 'gnx-users-home',
@@ -10,6 +11,11 @@ export class UsersHomeComponent implements OnInit {
 
   menuItems: MenuItem[] = [];
 
+  constructor(
+    private userService: UsersService
+  ) {
+  }
+
   ngOnInit() {
 
     this.menuItems = [
@@ -19,6 +25,10 @@ export class UsersHomeComponent implements OnInit {
         routerLink: ['/admin/users']
       },
     ];
+    this.userService.getAll().subscribe((response: UsersResponse) => {
+
+      console.log(response);
+    })
   }
 
 

@@ -91,7 +91,7 @@ import {RippleModule} from "primeng/ripple";
 import {AutoFocusModule} from "primeng/autofocus";
 import {AnimateModule} from "primeng/animate";
 
-let components = [
+const components = [
   AutoCompleteModule,
   CalendarModule,
   CascadeSelectModule,

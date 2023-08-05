@@ -18,11 +18,12 @@ export class AuthenticationGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const currentUser = this.authenticationService.isAuthenticate();
+    return true;
+    // const currentUser = this.authenticationService.isAuthenticate();
 
-    if (currentUser) {
-      return true;
-    }
+    // if (currentUser) {
+    //   return true;
+    // }
     this.router.navigate(['/auth/login'], {queryParams: {returnUrl: state.url}});
     return false;
   }

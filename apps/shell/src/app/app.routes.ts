@@ -1,5 +1,6 @@
 import {Route} from '@angular/router';
-import {AuthenticationGuard} from "@gnx/authentication";
+import {AuthenticationGuard} from "@gnx/shared";
+import {AppComponent} from "./app.component";
 
 export const appRoutes: Route[] = [
   {
@@ -7,6 +8,10 @@ export const appRoutes: Route[] = [
     pathMatch: 'full',
     redirectTo: '/auth/login',
   },
+  // {
+  //   path: '',
+  //   component: AppComponent,
+  // },
   {
     path: 'auth',
     loadChildren: () => import('login/Module').then((m) => m.RemoteEntryModule),

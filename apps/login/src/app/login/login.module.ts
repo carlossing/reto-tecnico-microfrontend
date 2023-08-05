@@ -5,8 +5,9 @@ import {LoginRoutingModule} from './login-routing.module';
 import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {SharedPrimeNgModule} from "@gnx/shared-prime-ng";
-import {APP_CONFIG, AuthenticationModule, AuthenticationService} from "@gnx/authentication";
-import {environment} from "../../environments/environment";
+import {SharedModule} from "@gnx/shared";
+
+console.log('aaaaaaaaaaaa');
 
 @NgModule({
   declarations: [LoginComponent],
@@ -15,15 +16,11 @@ import {environment} from "../../environments/environment";
     LoginRoutingModule,
     ReactiveFormsModule,
     SharedPrimeNgModule,
-    AuthenticationModule,
+    SharedModule,
   ],
-  providers: [
-    AuthenticationService,
-    {
-      provide: APP_CONFIG,
-      useValue: environment
-    }
-  ],
+  providers: [],
 })
 export class LoginModule {
 }
+
+console.log('bbbbbbbbbbb');

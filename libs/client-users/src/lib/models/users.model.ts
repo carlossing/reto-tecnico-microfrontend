@@ -7,6 +7,6 @@ export interface Users {
 
 export interface UsersResponse {
   items_page?: number;
-  items?: Users[];
+  items: Users[];
   ok?: boolean;
 }

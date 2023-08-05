@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
-import {UsersResponse, UsersService} from "@gnx/client-users";
+import {Users, UsersResponse, UsersService} from "@gnx/client-users";
 import {Subject, takeUntil} from "rxjs";
 
 @Component({
@@ -12,6 +12,7 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
 
   menuItems: MenuItem[] = [];
 
+  users: Users[] = [];
   private unsubscribe = new Subject<void>();
 
   constructor(
@@ -37,8 +38,7 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
       .pipe(
         takeUntil(this.unsubscribe)
       ).subscribe((response: UsersResponse) => {
-
-      console.log(response);
+      this.users = response.items;
     });
   }
 

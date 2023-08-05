@@ -56,6 +56,9 @@ dependencies:
   primeflex:
     specifier: ^3.3.1
     version: 3.3.1
+  primeicons:
+    specifier: ^6.0.1
+    version: 6.0.1
   primeng:
     specifier: ^16.1.0
     version: 16.1.0(@angular/common@16.1.0)(@angular/core@16.1.0)(@angular/forms@16.1.0)(rxjs@7.8.1)(zone.js@0.13.0)
@@ -9926,6 +9929,10 @@ packages:
 
   /primeflex@3.3.1:
     resolution: {integrity: sha512-zaOq3YvcOYytbAmKv3zYc+0VNS9Wg5d37dfxZnveKBFPr7vEIwfV5ydrpiouTft8MVW6qNjfkaQphHSnvgQbpQ==}
+    dev: false
+
+  /primeicons@6.0.1:
+    resolution: {integrity: sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==}
     dev: false
 
   /primeng@16.1.0(@angular/common@16.1.0)(@angular/core@16.1.0)(@angular/forms@16.1.0)(rxjs@7.8.1)(zone.js@0.13.0):

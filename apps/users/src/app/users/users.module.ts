@@ -9,6 +9,7 @@ import { httpInterceptorProviders } from '../../../../../libs/shared/src/lib/int
 import { SharedPrimeNgModule } from '@gnx/shared-prime-ng';
 import { UsersDetailComponent } from './components/users-detail/users-detail.component';
 import { UsersContainerComponent } from './components/users-container/users-container.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 // console.log(environment);
 @NgModule({
@@ -17,13 +18,14 @@ import { UsersContainerComponent } from './components/users-container/users-cont
     UsersDetailComponent,
     UsersContainerComponent,
   ],
-  imports: [
-    CommonModule,
-    UsersRoutingModule,
-    SharedModule,
-    SharedPrimeNgModule,
-    ClientUsersModule,
-  ],
+    imports: [
+        CommonModule,
+        UsersRoutingModule,
+        SharedModule,
+        SharedPrimeNgModule,
+        ClientUsersModule,
+        ReactiveFormsModule,
+    ],
   providers: [
     // {
     //   provide: APP_CONFIG,

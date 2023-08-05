@@ -24,6 +24,7 @@
     "ckeditor5-custom-build": "link:libs\\ckeditor",
     "crypto-js": "^4.1.1",
     "primeflex": "^3.3.1",
+    "primeicons": "^6.0.1",
     "primeng": "^16.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -85,4 +85,8 @@ export class UsersDetailComponent implements OnInit {
     // });
 
   }
+
+  toggleEdit(){
+    this.isEdit = !this.isEdit;
+  }
 }

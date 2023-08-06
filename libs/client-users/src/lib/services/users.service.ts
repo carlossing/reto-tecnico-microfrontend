@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {User, UsersCollectionResponse} from "../models/users.model";
+import {User, UserEntityResponse, UsersCollectionResponse} from "../models/users.model";
 import {Observable} from "rxjs";
 import {APP_CONFIG} from "@gnx/app-config";
 
@@ -38,13 +38,18 @@ export class UsersService {
 
   getOne(id: string): Observable<User> {
     const endpoint = `${this.USERS_ENDPOINT}/${id}`;
-    //
-    // const params = QueryParamsBuilderUtil.build(pageIndex,
-    //   pageSize,
-    //   sortField,
-    //   sortOrder,
-    //   filters);
-    // return this.http.get<TestsCollectionResponse>(`${endpoint}`, {params});
     return this.http.get<User>(`${endpoint}`);
   }
+
+  create(user: User): Observable<UserEntityResponse> {
+    const endpoint = `${this.USERS_ENDPOINT}`;
+    return this.http.post<UserEntityResponse>(`${endpoint}`, user);
+  }
+
+  update(uuid: string, user: User): Observable<UserEntityResponse> {
+    const endpoint = `${this.USERS_ENDPOINT}/${uuid}`;
+    return this.http.patch<UserEntityResponse>(`${endpoint}`, user);
+  }
+
+
 }

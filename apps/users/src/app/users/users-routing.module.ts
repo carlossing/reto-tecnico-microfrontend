@@ -14,9 +14,13 @@ const routes: Routes = [
         component: UsersHomeComponent,
       },
       {
+        path: 'detail',
+        component: UsersDetailComponent
+      },
+      {
         path: 'detail/:id',
         component: UsersDetailComponent
-      }
+      },
     ]
   }
 ];

@@ -1,13 +1,17 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {MenuItem} from "primeng/api";
-import {User, UsersCollectionResponse, UsersService} from "@gnx/client-users";
+import {User, UserEntityResponse, UsersCollectionResponse, UsersService} from "@gnx/client-users";
 import {Subject, takeUntil} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import {ConfirmationService} from "primeng/api";
 
 @Component({
   selector: 'gnx-users-home',
   templateUrl: './users-home.component.html',
   styleUrls: ['./users-home.component.scss'],
+  providers: [
+    ConfirmationService
+  ]
 })
 export class UsersHomeComponent implements OnInit, OnDestroy {
 
@@ -39,6 +43,7 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
   openEditModal(user: User) {
     this.redirectToTestForm(user);
   }
+
   redirectToTestForm(user: User) {
     this.router.navigate(['/admin/users/detail/' + user.id]);
   }
@@ -48,5 +53,42 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
     this.unsubscribe.complete();
   }
 
+  confirm1(id: string) {
+
+    Swal.fire({
+      title: 'Alerta',
+      text: "¿Estas seguro de eliminar este usuario",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.userService.delete(id)
+          .pipe(
+            takeUntil(this.unsubscribe)
+          )
+          .subscribe((response: UserEntityResponse) => {
+
+            Swal.fire({
+              title: 'Genial!',
+              text: 'Archivado correcto',
+              icon: 'success',
+              confirmButtonText: 'Aceptar'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.getAllUsers();
+                // this.router.navigate(['/admin/users']);
+              }
+            });
+          });
+      }
+      if (result.isDismissed) {
+        console.log('isDismissed');
+      }
+    });
+  }
 
 }

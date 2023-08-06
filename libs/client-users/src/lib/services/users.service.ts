@@ -41,6 +41,7 @@ export class UsersService {
     return this.http.get<User>(`${endpoint}`);
   }
 
+
   create(user: User): Observable<UserEntityResponse> {
     const endpoint = `${this.USERS_ENDPOINT}`;
     return this.http.post<UserEntityResponse>(`${endpoint}`, user);
@@ -51,5 +52,9 @@ export class UsersService {
     return this.http.patch<UserEntityResponse>(`${endpoint}`, user);
   }
 
+  delete(id: string): Observable<UserEntityResponse> {
+    const endpoint = `${this.USERS_ENDPOINT}/${id}`;
+    return this.http.delete<UserEntityResponse>(`${endpoint}`);
+  }
 
 }

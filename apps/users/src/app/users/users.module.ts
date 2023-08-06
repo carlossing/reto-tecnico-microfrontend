@@ -10,7 +10,6 @@ import {UsersDetailComponent} from './components/users-detail/users-detail.compo
 import {UsersContainerComponent} from './components/users-container/users-container.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
-// console.log(environment);
 @NgModule({
   declarations: [
     UsersHomeComponent,

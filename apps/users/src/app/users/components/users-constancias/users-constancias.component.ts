@@ -32,6 +32,17 @@ export class UsersConstanciasComponent implements OnInit, OnDestroy {
       });
   }
 
+  download(content: string) {
+    this.downloadPdf(content, 'constancia');
+  }
+
+  downloadPdf(base64String: string, fileName: string) {
+    const source = `data:application/pdf;base64,${base64String}`;
+    const link = document.createElement('a');
+    link.href = source;
+    link.download = `${fileName}.pdf`;
+    link.click();
+  }
   ngOnDestroy() {
     this.unsubscribe.next();
     this.unsubscribe.complete();

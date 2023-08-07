@@ -80,13 +80,11 @@ export class UsersHomeComponent implements OnInit, OnDestroy {
             }).then((result) => {
               if (result.isConfirmed) {
                 this.getAllUsers();
-                // this.router.navigate(['/admin/users']);
               }
             });
           });
       }
       if (result.isDismissed) {
-        console.log('isDismissed');
       }
     });
   }

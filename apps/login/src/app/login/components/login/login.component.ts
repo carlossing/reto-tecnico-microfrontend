@@ -53,12 +53,9 @@ export class LoginComponent {
   }
 
   submitForm(): void {
-    console.log('submitForm');
-    console.log(this.loginForm.value);
-    if (this.loginForm.valid) {
-      console.log('this.validateForm.valid');
 
-      console.log(this.loginForm.value);
+    if (this.loginForm.valid) {
+
       this.isLoading = true;
       this.authenticationService.create(
         this.loginForm.value.userName,
@@ -67,9 +64,9 @@ export class LoginComponent {
         takeUntil(this.unsubscribe)
       ).subscribe((authenticationResponse: AuthenticationResponse) => {
         this.isLoading = false;
-        console.log(authenticationResponse);
+
         if (this.authenticationService.validateResponse(authenticationResponse)) {
-          console.log('Login OK!!!');
+
           this.router.navigate(['/admin/users']);
         }
       });

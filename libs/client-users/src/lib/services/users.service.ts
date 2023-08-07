@@ -15,7 +15,6 @@ export class UsersService {
     @Inject(APP_CONFIG) private appConfig: any,
     private http: HttpClient,
   ) {
-    console.log(appConfig);
   }
 
   getAll(

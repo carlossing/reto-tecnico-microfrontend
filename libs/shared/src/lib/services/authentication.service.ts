@@ -28,8 +28,7 @@ export class AuthenticationService {
     private localStorage: LocalStorageService,
     private router: Router,
   ) {
-    console.log(appConfig);
-  }
+   }
 
   create(username: string, password: string): Observable<AuthenticationResponse> {
 

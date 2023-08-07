@@ -1,0 +1,182 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="lg:px-8 md:px-6 px-4 py-8 surface-section">
+            <p-tabView>
+                <p-tabPanel
+                    header="Información de Usuario"
+                    [selected]="true"
+                >
+                    <div
+                        class="surface-section"
+                        *ngIf="!isLoading; else skeleton"
+                    >
+                        <form [formGroup]="editForm">
+                            <div class="font-medium text-3xl text-900 mb-3">
+                                Información de Usuario
+                                <p-button
+                                    *ngIf="id"
+                                    icon="pi pi-pencil"
+                                    styleClass="p-button-rounded p-button-text p-button-sm"
+                                    (click)="toggleEdit()"
+                                ></p-button>
+                            </div>
+                            <ul class="list-none p-0 m-0">
+                                <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+                                    <div class="text-500 w-6 md:w-2 font-medium">Usuario</div>
+                                    <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                                        <ng-container *ngIf="!isEdit">{{ user.username }}</ng-container>
+                                        <input
+                                            *ngIf="isEdit"
+                                            type="text"
+                                            class="p-inputtext-sm"
+                                            pInputText
+                                            formControlName="username"
+                                        >
+                                    </div>
+                                </li>
+                                <!-- <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap"> -->
+                                <!-- <div class="text-500 w-6 md:w-2 font-medium">Contraseña</div> -->
+                                <!-- <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1"> -->
+                                <!-- <ng-container *ngIf="!isEdit">{{ user.username }}</ng-container> -->
+                                <!-- <input *ngIf="isEdit" type="text" class="p-inputtext-sm" pInputText formControlName="username"/> -->
+                                <!-- </div> -->
+                                <!-- </li> -->
+                                <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+                                    <div class="text-500 w-6 md:w-2 font-medium">Nombres</div>
+                                    <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                                        <ng-container *ngIf="!isEdit">{{ user.first_name}}</ng-container>
+                                        <input
+                                            *ngIf="isEdit"
+                                            type="text"
+                                            class="p-inputtext-sm"
+                                            pInputText
+                                            formControlName="first_name"
+                                        >
+                                    </div>
+                                    <div class="w-6 md:w-2 flex justify-content-end">
+                                        <!-- <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button> -->
+                                    </div>
+                                </li>
+                                <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+                                    <div class="text-500 w-6 md:w-2 font-medium">Apellidos</div>
+                                    <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                                        <ng-container *ngIf="!isEdit">{{user.last_name}}</ng-container>
+                                        <input
+                                            *ngIf="isEdit"
+                                            type="text"
+                                            class="p-inputtext-sm"
+                                            pInputText
+                                            formControlName="last_name"
+                                        >
+                                    </div>
+                                    <div class="w-6 md:w-2 flex justify-content-end">
+                                        <!-- <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button> -->
+                                    </div>
+                                </li>
+                                <li
+                                    class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap"
+                                    *ngIf="!id"
+                                >
+                                    <div class="text-500 w-6 md:w-2 font-medium">Contraseña</div>
+                                    <div class="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
+                                        <!-- <ng-container *ngIf="!isEdit">{{ user.last_name }}</ng-container> -->
+                                        <input
+                                            type="password"
+                                            class="p-inputtext-sm"
+                                            pInputText
+                                            formControlName="password"
+                                        >
+                                    </div>
+                                    <div class="w-6 md:w-2 flex justify-content-end">
+                                        <!-- <button pButton pRipple label="Edit" icon="pi pi-pencil" class="p-button-text"></button> -->
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <p-toolbar styleClass="mb-4" *ngIf="isEdit">
+                        <ng-template pTemplate="left">
+                            <!-- <div class="my-2"> -->
+
+                            <!-- <button pButton pRipple label="Aprobar Compromiso" icon="pi pi-verified" class="p-button-success mr-2" -->
+                            <!-- [disabled]="isLoading" -->
+                            <!-- (click)="approve(id)"></button> -->
+
+                            <!-- <p-progressSpinner styleClass="w-2rem h-2rem" -->
+                            <!-- strokeWidth="8" -->
+                            <!-- fill="var(&#45;&#45;surface-ground)" animationDuration=".5s" -->
+                            <!-- *ngIf="isLoading" -->
+                            <!-- ></p-progressSpinner> -->
+                            <!-- </div> -->
+
+                            <div class="my-2">
+                                <button
+                                    pButton
+                                    pRipple
+                                    label="Guardar"
+                                    icon="pi pi-pencil"
+                                    class="p-button-success mr-2"
+                                    [disabled]="isSaving"
+                                    (click)="submit()"
+                                ></button>
+
+                                <p-progressSpinner
+                                    styleClass="w-2rem h-2rem"
+                                    strokeWidth="8"
+                                    fill="var(--surface-ground)"
+                                    animationDuration=".5s"
+                                    *ngIf="isSaving"
+                                ></p-progressSpinner>
+                            </div>
+                        </ng-template>
+                    </p-toolbar>
+                </p-tabPanel>
+                <p-tabPanel header="Constancias">
+                    <gnx-users-constancias
+                        *ngIf="user"
+                        [userUuid]="id"
+                    ></gnx-users-constancias>
+                </p-tabPanel>
+            </p-tabView>
+
+            <p-toast></p-toast>
+        </div>
+    </div>
+</div>
+
+<ng-template #skeleton>
+    <div class="border-round border-1 surface-border p-4 surface-card">
+        <div class="flex mb-3">
+            <p-skeleton
+                shape="circle"
+                size="4rem"
+                styleClass="mr-2"
+            ></p-skeleton>
+            <div>
+                <p-skeleton
+                    width="10rem"
+                    styleClass="mb-2"
+                ></p-skeleton>
+                <p-skeleton
+                    width="5rem"
+                    styleClass="mb-2"
+                ></p-skeleton>
+                <p-skeleton height=".5rem"></p-skeleton>
+            </div>
+        </div>
+        <p-skeleton
+            width="100%"
+            height="150px"
+        ></p-skeleton>
+        <div class="flex justify-content-between mt-3">
+            <p-skeleton
+                width="4rem"
+                height="2rem"
+            ></p-skeleton>
+            <p-skeleton
+                width="4rem"
+                height="2rem"
+            ></p-skeleton>
+        </div>
+    </div>
+</ng-template>

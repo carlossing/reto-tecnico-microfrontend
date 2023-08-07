@@ -29,19 +29,22 @@ Proyecto
 │   ├───client-users/
 │   ├───shared/
 │   └───shared-prime-ng/
-├───angular.json
-├───CONTRIBUTING.md
-├───STYLEGUIDE.md
-├───Dockerfile
-├───extra-webpack.config.js
-├───jest.config.js
-├───karma.conf.js
-├───local.ms.building.sh
+├───.editorconfig
+├───.eslintignore
+├───.eslintrc.json
+├───.gitignore
+├───.npmrc
+├───.prettierignore
+├───.prettierrc
+├───jest.config.ts
+├───jest.preset.js
+├───NOTES.md
 ├───nx.json
-├───package-lock.json
 ├───package.json
-├───tsconfig.json
-├───tslint.json
+├───pnpm-lock.yaml
+├───README.md
+├───STYLEGUIDE.md
+└───tsconfig.base.json
 ```
 
 ### Lineamientos

@@ -52,7 +52,7 @@ Proyecto
 1. [Guía de estilo de Genia](STYLEGUIDE.md)
 2. [Guía de estilo oficial de Angular](https://angular.io/guide/styleguide)
 3. [Guía de estilo de Typescript](https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines)
-4. [Guía de estilo para unit tests](ut.md)
+
 
 ## Requisitos
 

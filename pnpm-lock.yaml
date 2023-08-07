@@ -32,24 +32,42 @@ dependencies:
   '@angular/router':
     specifier: ~16.1.0
     version: 16.1.0(@angular/common@16.1.0)(@angular/core@16.1.0)(@angular/platform-browser@16.1.0)(rxjs@7.8.1)
+  '@auth0/angular-jwt':
+    specifier: ^5.1.2
+    version: 5.1.2(@angular/common@16.1.0)
   '@ckeditor/ckeditor5-angular':
     specifier: ^7.0.0
     version: 7.0.0(@angular/common@16.1.0)(@angular/core@16.1.0)(@angular/forms@16.1.0)(@ckeditor/ckeditor5-core@38.1.1)(@ckeditor/ckeditor5-engine@38.1.1)(@ckeditor/ckeditor5-utils@38.1.1)(@ckeditor/ckeditor5-watchdog@38.1.1)(rxjs@7.8.1)
   '@nx/angular':
     specifier: 16.6.0
     version: 16.6.0(@angular-devkit/build-angular@16.1.6)(@angular-devkit/core@16.1.0)(@angular-devkit/schematics@16.1.6)(@schematics/angular@16.1.6)(@types/node@16.11.7)(cypress@12.16.0)(esbuild@0.17.19)(eslint@8.15.0)(nx@16.6.0)(rxjs@7.8.1)(ts-node@10.9.1)(typescript@5.1.3)
+  '@types/crypto-js':
+    specifier: ^4.1.1
+    version: 4.1.1
   chart.js:
     specifier: ^4.3.2
     version: 4.3.2
   ckeditor5-custom-build:
     specifier: link:libs\ckeditor
     version: link:libs/ckeditor
+  crypto-js:
+    specifier: ^4.1.1
+    version: 4.1.1
+  primeflex:
+    specifier: ^3.3.1
+    version: 3.3.1
+  primeicons:
+    specifier: ^6.0.1
+    version: 6.0.1
   primeng:
     specifier: ^16.1.0
     version: 16.1.0(@angular/common@16.1.0)(@angular/core@16.1.0)(@angular/forms@16.1.0)(rxjs@7.8.1)(zone.js@0.13.0)
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
+  sweetalert2:
+    specifier: ^11.7.20
+    version: 11.7.20
   tslib:
     specifier: ^2.3.0
     version: 2.5.3
@@ -627,6 +645,15 @@ packages:
 
   /@assemblyscript/loader@0.10.1:
     resolution: {integrity: sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg==}
+
+  /@auth0/angular-jwt@5.1.2(@angular/common@16.1.0):
+    resolution: {integrity: sha512-8ulz24cPpEkZb9/AdAaWfYIkomQDbZqvB9LproF/48Klnr30EJx09AYF9sbKTN4qLSgIZSlCb/Y7XQJZ51vSzA==}
+    peerDependencies:
+      '@angular/common': '>=12.0.0'
+    dependencies:
+      '@angular/common': 16.1.0(@angular/core@16.1.0)(rxjs@7.8.1)
+      tslib: 2.6.1
+    dev: false
 
   /@babel/code-frame@7.22.5:
     resolution: {integrity: sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ==}
@@ -4233,6 +4260,10 @@ packages:
     dependencies:
       '@types/node': 16.11.7
 
+  /@types/crypto-js@4.1.1:
+    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
+    dev: false
+
   /@types/eslint-scope@3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -5848,6 +5879,10 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  /crypto-js@4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
 
   /css-declaration-sorter@6.4.1(postcss@8.4.27):
     resolution: {integrity: sha512-rtdthzxKuyq6IzqX6jEcIzQF/YqccluefyCYheovBOLhFT/drQA9zj/UbRAa9J7C0o6EG6u3E6g+vKkay7/k3g==}
@@ -9895,6 +9930,14 @@ packages:
       ansi-styles: 5.2.0
       react-is: 18.2.0
 
+  /primeflex@3.3.1:
+    resolution: {integrity: sha512-zaOq3YvcOYytbAmKv3zYc+0VNS9Wg5d37dfxZnveKBFPr7vEIwfV5ydrpiouTft8MVW6qNjfkaQphHSnvgQbpQ==}
+    dev: false
+
+  /primeicons@6.0.1:
+    resolution: {integrity: sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==}
+    dev: false
+
   /primeng@16.1.0(@angular/common@16.1.0)(@angular/core@16.1.0)(@angular/forms@16.1.0)(rxjs@7.8.1)(zone.js@0.13.0):
     resolution: {integrity: sha512-qqYQ2xO6EmiBEqvlKHIWJPrC90HVVQGitnrGurpdT9f8/Mkz0YCCo4GwLElKyHZ52STd+cw2MtoXa1sJRVR30g==}
     peerDependencies:
@@ -10832,6 +10875,10 @@ packages:
       css-tree: 2.3.1
       csso: 5.0.5
       picocolors: 1.0.0
+    dev: false
+
+  /sweetalert2@11.7.20:
+    resolution: {integrity: sha512-GdU1TkiLpGGC0mcPV8bKmS7G0MR7caxambPkEU8zyepRSNR9EaEvIjNhX5QNkL0VFVzHbI3l12NtuEklkJ0D4Q==}
     dev: false
 
   /symbol-observable@4.0.0:

@@ -18,6 +18,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gnx/app-config": [
+        "libs/app-config/src/index.ts"
+      ],
+      "@gnx/authentication": [
+        "libs/authentication/src/index.ts"
+      ],
+      "@gnx/client-users": [
+        "libs/client-users/src/index.ts"
+      ],
       "@gnx/shared": [
         "libs/shared/src/index.ts"
       ],
@@ -26,7 +35,8 @@
       ]
     },
     "allowJs": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false
   },
   "exclude": [
     "node_modules",

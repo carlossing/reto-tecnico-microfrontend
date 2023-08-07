@@ -131,28 +131,16 @@ export class UsersDetailComponent implements OnInit {
           .create(payload)
           .subscribe((response: UserEntityResponse) => {
             this.isSaving = false;
-            if (response.ok) {
-              Swal.fire({
-                title: 'Genial!',
-                text: 'Registro correcto',
-                icon: 'success',
-                confirmButtonText: 'Aceptar',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  this.router.navigate(['/admin/users']);
-                }
-              });
-            } else {
-              Swal.fire({
-                title: 'Oh no!',
-                text:
-                  'Ocurrio un error (' +
-                  response.message +
-                  '), por favor revise la información e intente nuevamente',
-                icon: 'error',
-                confirmButtonText: 'Aceptar',
-              });
-            }
+            Swal.fire({
+              title: 'Genial!',
+              text: 'Registro correcto',
+              icon: 'success',
+              confirmButtonText: 'Aceptar',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/admin/users']);
+              }
+            });
           });
       }
       if (this.id) {
@@ -161,28 +149,16 @@ export class UsersDetailComponent implements OnInit {
           .subscribe((response: UserEntityResponse) => {
             this.isSaving = false;
 
-            if (response.ok) {
-              Swal.fire({
-                title: 'Genial!',
-                text: 'Registro correcto',
-                icon: 'success',
-                confirmButtonText: 'Aceptar',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  this.router.navigate(['/admin/users']);
-                }
-              });
-            } else {
-              Swal.fire({
-                title: 'Oh no!',
-                text:
-                  'Ocurrio un error (' +
-                  response.message +
-                  '), por favor revise la información e intente nuevamente',
-                icon: 'error',
-                confirmButtonText: 'Aceptar',
-              });
-            }
+            Swal.fire({
+              title: 'Genial!',
+              text: 'Actualización correcta',
+              icon: 'success',
+              confirmButtonText: 'Aceptar',
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['/admin/users']);
+              }
+            });
           });
       }
     } else {

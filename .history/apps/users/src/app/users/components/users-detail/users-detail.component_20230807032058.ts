@@ -146,9 +146,9 @@ export class UsersDetailComponent implements OnInit {
               Swal.fire({
                 title: 'Oh no!',
                 text:
-                  'Ocurrio un error (' +
+                  'Ocurrio un error' +
                   response.message +
-                  '), por favor revise la información e intente nuevamente',
+                  ', por favor revise la información e intente nuevamente',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
               });
@@ -176,9 +176,9 @@ export class UsersDetailComponent implements OnInit {
               Swal.fire({
                 title: 'Oh no!',
                 text:
-                  'Ocurrio un error (' +
+                  'Ocurrio un error' +
                   response.message +
-                  '), por favor revise la información e intente nuevamente',
+                  ', por favor revise la información e intente nuevamente',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
               });

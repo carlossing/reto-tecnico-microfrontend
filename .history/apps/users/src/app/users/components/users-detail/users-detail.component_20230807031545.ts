@@ -142,16 +142,6 @@ export class UsersDetailComponent implements OnInit {
                   this.router.navigate(['/admin/users']);
                 }
               });
-            } else {
-              Swal.fire({
-                title: 'Oh no!',
-                text:
-                  'Ocurrio un error (' +
-                  response.message +
-                  '), por favor revise la información e intente nuevamente',
-                icon: 'error',
-                confirmButtonText: 'Aceptar',
-              });
             }
           });
       }
@@ -171,16 +161,6 @@ export class UsersDetailComponent implements OnInit {
                 if (result.isConfirmed) {
                   this.router.navigate(['/admin/users']);
                 }
-              });
-            } else {
-              Swal.fire({
-                title: 'Oh no!',
-                text:
-                  'Ocurrio un error (' +
-                  response.message +
-                  '), por favor revise la información e intente nuevamente',
-                icon: 'error',
-                confirmButtonText: 'Aceptar',
               });
             }
           });

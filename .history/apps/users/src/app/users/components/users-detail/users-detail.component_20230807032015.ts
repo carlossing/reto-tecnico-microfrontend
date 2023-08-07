@@ -145,10 +145,7 @@ export class UsersDetailComponent implements OnInit {
             } else {
               Swal.fire({
                 title: 'Oh no!',
-                text:
-                  'Ocurrio un error (' +
-                  response.message +
-                  '), por favor revise la información e intente nuevamente',
+                text: 'Ocurrio un error, por favor revise la información e intente nuevamente',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
               });
@@ -175,10 +172,7 @@ export class UsersDetailComponent implements OnInit {
             } else {
               Swal.fire({
                 title: 'Oh no!',
-                text:
-                  'Ocurrio un error (' +
-                  response.message +
-                  '), por favor revise la información e intente nuevamente',
+                text: 'Ocurrio un error, por favor revise la información e intente nuevamente',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
               });
